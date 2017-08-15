@@ -394,7 +394,7 @@ def main():
             if not options.verbose:
                 logging.warn(stdout)
             logging.warn('sync failed: %s' % name)
-            continue  # no need to run createrepo if sync failed
+            sys.exit(p1_rc)  # no need to run createrepo if sync failed
 
         # run createrepo to generate package metadata
         if createrepo:
